@@ -76,8 +76,12 @@ export const Card = ({ text, sub, className = '' }: CardProps) => {
         selection:text-[#0e0e0e] selection:bg-[#fff]
       `}
       >
-        {text} :{' '}
-        <span className="text-[#E6FA95] dark:text-[#8BB966]">{sub}</span>
+        {text} : {' '} 
+        <span className={`
+          text-[#E6FA95] dark:text-[#8BB966] dark:selection:text-[#fff] 
+          dark:selection:bg-[#0e0e0e] selection:text-[#0e0e0e] 
+          selection:bg-[#fff]
+        `}>{sub}</span>
       </h1>
     </div>
   );
