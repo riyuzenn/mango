@@ -3,10 +3,15 @@ import { WireframeSphere } from '@/components/wireframe';
 import { mono } from '@/lib/font';
 import { Button } from '@/components/button';
 import { StatusMarquee, TopMarquee } from '@/components/marquee';
-
+import { NextSeo } from 'next-seo';
+ 
 export default function Home() {
   return (
     <React.Fragment>
+      <NextSeo 
+        title="Mango Community"
+        description="Friendly non-toxic gaming community!"
+      />
       <div>
         <div className="fixed noise"></div>
         <div className="pt-2">
