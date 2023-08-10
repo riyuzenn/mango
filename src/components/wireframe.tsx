@@ -16,7 +16,7 @@ const Sphere = (props: JSX.IntrinsicElements['mesh'] & { color: string }) => {
   return (
     <mesh {...props} ref={mesh}>
       <sphereGeometry args={[500, 20, 20]} />
-      <meshBasicMaterial color={props.color} wireframeLineWidth={1} wireframe />
+      <meshBasicMaterial color={props.color} wireframeLinewidth={1} wireframe />
     </mesh>
   );
 };
