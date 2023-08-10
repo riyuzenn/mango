@@ -23,11 +23,28 @@ type MarqueeProps = {
   m?: string;
 };
 
+type GetMemberProps = {
+  mem: Array<DiscordServerMemberProps>;
+  len?: number;
+}
+
+function getMembers({
+  mem,
+  len = 10
+} : GetMemberProps) : Array<DiscordServerMemberProps> {
+  let m = mem.slice(0, len);
+  const f = ["Cyaannh"];
+  let fil = mem.filter((mem) => f.includes(mem.username));
+  m.push.apply(m, fil);
+
+  return m;
+}
+
 export const Avatar = ({ members, className = '' }: AvatarProps) => {
   return (
     <div className={`${className} px-6 mx-16`}>
       <div className="flex -space-x-1 overflow-hidden">
-        {members.slice(0, 15).map((v, i) => {
+        {members.map((v, i) => {
           return (
             <img
               className="inline-block h-8 w-8 rounded-full ring-1 dark:ring-white ring-black"
@@ -167,7 +184,7 @@ export const StatusMarquee = ({ className = '', m = '' }: MarqueeProps) => {
 
           {data ? (
             <div className="flex justify-center items-center">
-              <Avatar members={data.members} />
+              <Avatar members={getMembers({ mem: data.members })} />
               <p
                 className={`
               text-[25px] alpha
