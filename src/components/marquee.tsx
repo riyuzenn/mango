@@ -27,7 +27,7 @@ export const Avatar = ({ members, className = '' }: AvatarProps) => {
   return (
     <div className={`${className} px-6 mx-16`}>
       <div className="flex -space-x-1 overflow-hidden">
-        {members.slice(0, 8).map((v, i) => {
+        {members.slice(0, 15).map((v, i) => {
           return (
             <img
               className="inline-block h-8 w-8 rounded-full ring-1 dark:ring-white ring-black"
