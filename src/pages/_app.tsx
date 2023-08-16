@@ -9,7 +9,7 @@ import { inter } from '@/lib/font';
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <React.Fragment>
-      <ThemeProvider attribute="class" defaultTheme="dark">
+      <ThemeProvider attribute="class" defaultTheme="system">
         <main className={`${inter.className}`}>
           <Header />
           <Component {...pageProps} />
